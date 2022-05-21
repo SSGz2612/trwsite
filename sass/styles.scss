@@ -1,0 +1,191 @@
+@import "var";
+
+* {
+    background-color: $primary;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 1680px;
+    width: 100%;
+    min-height: 598px;
+    height: auto;
+}
+
+    .header-title {
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        max-width: 1392px;
+        width: 90%;
+        min-height: 72px;
+        height: auto;
+    }
+
+    .header-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        max-width: 1392px;
+        width: 90%;
+        min-height: 72px;
+        height: auto;
+    }
+
+    .box-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+    }
+
+    .box {
+        display: flex;
+        background-color: $acent-b;
+        width: 173px;
+        height: 76px;
+    }
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 1680px;
+    width: 100%;
+    min-height: 962px;
+    height: 100%;
+}
+
+    .section-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        min-width: 686px;
+        width: 50%;
+        height: 962px;
+    }
+
+    .box-card {
+        display: flex;
+        flex-wrap: wrap;
+        width: 686px;
+        height: 722px;
+    }
+
+    .box-img {
+        display: flex;
+        width: 100%;
+        height: 400px;
+        background-color: $acent-a;
+    }
+
+    .box-txt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+        .box-title {
+            display: flex;
+            font-size: 24px;
+            width: 558px;
+            height: auto;
+        }
+
+        .box-text-content {
+            display: flex;
+            font-size: 18px;
+            width: 558px;
+            height: auto;
+        }
+
+aside {
+    display: flex;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 1680px;
+    width: 100%;
+    height: 470px;
+}
+
+.aside-a {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aside-b {
+    justify-content: center;
+}
+
+.box-pict {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    background-color: $acent-b;
+}
+
+.aside-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-card2 {
+    display: flex;
+    width: 509px;
+    height: 470px;
+    background-color: $terciary;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 1680px;
+    width: 100%;
+    height: 565px;
+}
+
+.footer-content {
+    display: flex;
+    width: 492px;
+    height: auto;
+}
+
+.content-form {
+    display: flex;
+    margin: 20px;
+    width: 492px;
+    height: auto;
+}
+
+input {
+    margin: 20px;
+    padding: 10px 30px;
+}
+
+button {
+    width: 250px;
+    height: 50px;
+}
