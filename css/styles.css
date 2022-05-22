@@ -19,26 +19,31 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 1; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  margin: 20px auto;
   text-align: center;
   max-width: 1680px;
   width: 100%;
   min-height: 598px;
-  height: auto;
-  background-image: url(../src/picture/tropiki.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; }
-  header span {
-    font-family: GraphikLCGRegular, Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 48px;
+  height: auto; }
+  .header span {
+    font-family: 'Smooch', cursive, GraphikLCGRegular, Helvetica, sans-serif;
+    font-size: 100px;
+    text-shadow: 1px 1px 5px black;
     color: white;
     margin: 10px 0;
     width: 90%;
     max-width: 1392px;
     height: auto; }
-  header p {
+  .header p {
     font-size: 36px;
     color: white;
     margin: 10px 0;
@@ -51,8 +56,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 1392px;
-  height: auto;
-  background-color: transparent; }
+  height: auto; }
 
 .box-icon {
   display: flex;
@@ -68,6 +72,95 @@ header {
     color: white;
     font-size: 20px; }
 
+.box-icon:hover {
+  background-color: white;
+  transition: 1s; }
+  .box-icon:hover i {
+    color: #58008b;
+    font-size: 25px; }
+
+.principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0; }
+
+.slider {
+  width: 1680px;
+  height: 598px;
+  border-radius: 10px;
+  overflow: hidden; }
+
+.slides {
+  display: flex;
+  width: 500%;
+  height: 598px; }
+  .slides input {
+    display: none; }
+
+.slide {
+  width: 20%;
+  transition: 2s; }
+  .slide img {
+    width: 1680px;
+    height: 598px; }
+
+.navigation-manual {
+  position: absolute;
+  width: 1680px;
+  margin-top: 610px;
+  display: flex;
+  justify-content: center; }
+  .navigation-manual .manual-btn {
+    border: 2px solid #58008b;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s; }
+  .navigation-manual .manual-btn:not(:last-child) {
+    margin-right: 40px; }
+  .navigation-manual .manual-btn:hover {
+    background-color: #58008b; }
+
+#radio1:checked ~ .first {
+  margin-left: 0; }
+
+#radio2:checked ~ .first {
+  margin-left: -20%; }
+
+#radio3:checked ~ .first {
+  margin-left: -40%; }
+
+#radio4:checked ~ .first {
+  margin-left: -60%; }
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 1680px;
+  justify-content: center;
+  margin-top: 610px; }
+  .navigation-auto div {
+    border: 2px solid #58008b;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s; }
+  .navigation-auto div:not(:last-child) {
+    margin-right: 40px; }
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #58008b; }
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #58008b; }
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #58008b; }
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #58008b; }
+
 section {
   display: flex;
   justify-content: center;
@@ -78,7 +171,7 @@ section {
   max-width: 1680px;
   width: 100%;
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px; }
 
 .section-container {
   display: flex;
@@ -121,6 +214,14 @@ section {
   .box-sect-icon i {
     font-size: 20px; }
 
+.box-sect-icon:hover {
+  background-color: #58008b;
+  border: 1px solid #58008b;
+  transition: 1s; }
+  .box-sect-icon:hover i {
+    color: white;
+    font-size: 25px; }
+
 .section-card-container {
   display: flex;
   justify-content: center;
@@ -138,17 +239,31 @@ section {
   width: 686px;
   min-height: 722px;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px; }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px; }
+
+.figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden; }
 
 .card-img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50%;
+  height: 100%;
   background-image: url(../src/picture/tropiki_more_skaly_90638.jpg);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s ease-in-out; }
+
+.card-img:hover {
+  transform: scale(1.2); }
 
 .card-txt {
   display: flex;
@@ -186,7 +301,7 @@ aside {
   max-width: 1680px;
   width: 100%;
   height: 470px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px; }
   .aside-container span {
     font-family: GraphikLCGRegular, Helvetica, sans-serif;
     font-weight: 800;
@@ -199,7 +314,10 @@ aside {
     width: 44px;
     height: 44px;
     border-radius: 22px;
-    background-color: skyblue; }
+    background-color: skyblue;
+    background-image: url(../src/picture/mujer_business.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
   .aside-container p {
     font-size: 24px;
     text-align: center;
@@ -215,23 +333,27 @@ aside {
   width: 100%;
   min-height: 470px;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px;
+  background-color: antiquewhite; }
   .aside-container-b span {
     font-family: GraphikLCGRegular, Helvetica, sans-serif;
     font-weight: 800;
     margin: 10px;
-    text-align: center;
+    text-align: left;
     font-size: 36px;
     width: 90%; }
-  .aside-container-b .box-pict {
+  .aside-container-b .box-pict-b {
     display: flex;
     width: 44px;
     height: 44px;
     border-radius: 22px;
-    background-color: skyblue; }
+    background-color: skyblue;
+    background-image: url(../src/picture/mujer_business.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
   .aside-container-b p {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     margin: 10px;
     width: 90%; }
 
@@ -252,7 +374,7 @@ aside {
     width: 44px;
     height: 44px;
     border-radius: 22px;
-    background-color: darkblue; }
+    background-color: #58008b; }
   .aside-txt p {
     font-size: 24px;
     text-align: center;
@@ -276,7 +398,11 @@ footer {
   max-width: 1680px;
   width: 100%;
   height: 565px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; }
+  background-image: url(../src/picture/tropiki.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px; }
   footer span {
     font-family: GraphikLCGRegular, Helvetica, sans-serif;
     font-weight: 800;
@@ -315,9 +441,9 @@ form {
     cursor: pointer; }
 
 @media only screen and (max-width: 1550px) {
-  header span {
-    font-size: 36px; }
-  header p {
+  .header span {
+    font-size: 60px; }
+  .header p {
     font-size: 24px; }
 
   .box-container {
@@ -326,6 +452,20 @@ form {
 
   .box-sect-container {
     justify-content: center;
+    width: 100%; }
+
+  .slider {
+    width: 100%;
+    height: 598px; }
+
+  .slide img {
+    width: 100%;
+    height: 598px; }
+
+  .navigation-manual {
+    width: 100%; }
+
+  .navigation-auto {
     width: 100%; } }
 @media only screen and (max-width: 1400px) {
   .section-container {
@@ -363,6 +503,9 @@ form {
     width: 350px;
     height: 350px; } }
 @media only screen and (max-width: 500px) {
+  .header span {
+    font-size: 50px; }
+
   .box-container {
     width: 350px; }
 

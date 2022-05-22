@@ -4,26 +4,75 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Site</title>
-        <!-- CSS -->
-        <link href="css/styles.css" rel="stylesheet">
+        <title>Web Site</title>        
         <!-- font awesome -->
         <script src="https://kit.fontawesome.com/5897218c5c.js" crossorigin="anonymous"></script>
+        
+        <!-- font google by link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <span>You're in good company</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. minima velit alias</p>
-            
-            <div class="box-container">
-                <div class="box-icon"><i class="fa-solid fa-thumbs-up"></i></div>
-                <div class="box-icon"><i class="fa-solid fa-building"></i></div>
-                <div class="box-icon"><i class="fa-solid fa-box-open"></i></div>
-                <div class="box-icon"><i class="fa-solid fa-briefcase"></i></div>
-                <div class="box-icon"><i class="fa-solid fa-children"></i></div>
-                <div class="box-icon"><i class="fa-solid fa-plane"></i></i></div>
+            <div class="header">
+                <span>You're in good company</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. minima velit alias</p>
+                
+                <div class="box-container">
+                    <div class="box-icon"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="box-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="box-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <div class="box-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="box-icon"><i class="fa-solid fa-children"></i></div>
+                    <div class="box-icon"><i class="fa-solid fa-plane"></i></i></div>
+                </div>
             </div>
         </header>
+
+        <div class="principal">
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <div class="slide first">
+                        <img src="src/picture/laguna_golubaya.jpg" alt="">
+                    </div>
+        
+                    <div class="slide">
+                        <img src="src/picture/okean_gorizont.jpg" alt="">
+                    </div>
+        
+                    <div class="slide">
+                        <img src="src/picture/ozero_vershiny.jpg" alt="">
+                    </div>
+        
+                    <div class="slide">
+                        <img src="src/picture/pesok_palmy.jpg" alt="">
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section>
             <div class="section-container">
@@ -42,7 +91,9 @@
 
             <div class="section-card-container">
                 <div class="card">
-                    <div class="card-img"></div>
+                    <div class="figure">
+                        <div class="card-img"></div>
+                    </div>                    
                     
                     <div class="card-txt">
                         <span>Sed ut perspiciatis unde omnis</span>
@@ -81,5 +132,17 @@
                 <button>Start free trial</button>
             </form>
         </footer>
+
+        <script type="text/javascript">
+            var cnt = 1;
+            setInterval( function(){
+                document.getElementById('radio' + cnt ).checked = true;
+                cnt++;
+
+                if( cnt > 4 ){
+                    cnt = 1;
+                }
+            }, 5000 );
+        </script>
     </body>
 </html>

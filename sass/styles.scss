@@ -32,22 +32,25 @@
 
 header {
     @include flex( flex, center, center );
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1
+}
+
+.header {
+    @include flex( flex, center, center );
     flex-direction: column;
-    margin: 20px auto;
     text-align: center;
     max-width: 1680px;
     width: 100%;
     min-height: 598px;
     height: auto;
 
-    background-image: url(../src/picture/tropiki.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
     span {
-        font-family: GraphikLCGRegular, Helvetica, sans-serif;
-        font-weight: 800;
-        font-size: 48px;
+        font-family: 'Smooch', cursive, GraphikLCGRegular, Helvetica, sans-serif;
+        font-size: 100px;
+        text-shadow: 1px 1px 5px black;
         color: white;
         margin: 10px 0;
         width: 90%;
@@ -71,7 +74,6 @@ header {
         flex-wrap: wrap;
         width: 1392px;
         height: auto;
-        background-color: transparent;
     }
 
         .box-icon {
@@ -89,6 +91,124 @@ header {
             }
         }
 
+        .box-icon:hover {
+            background-color: white;
+            transition: 1s;
+
+            i {
+                color: $acent-a;
+                font-size: 25px;
+            }
+        }
+
+.principal {
+    @include flex( flex, center, center );
+    position: relative;
+    z-index: 0;
+}
+
+.slider {
+    width: 1680px;
+    height: 598px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 598px;
+
+    input {
+        display: none;
+    }
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+
+    img {
+        width: 1680px;
+        height: 598px;
+    }
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 1680px;
+    margin-top: 610px;
+    display: flex;
+    justify-content: center;
+
+    .manual-btn {
+        border: 2px solid $acent-a;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .manual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .manual-btn:hover {
+        background-color: $acent-a;
+    }
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 1680px;
+    justify-content: center;
+    margin-top: 610px;
+
+    div {
+        border: 2px solid $acent-a;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+
+    div:not(:last-child){
+        margin-right: 40px;
+    }
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background: $acent-a;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background: $acent-a;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background: $acent-a;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background: $acent-a;
+}
+
 section {
     @include flex( flex, center, center );
     flex-wrap: wrap;
@@ -98,7 +218,7 @@ section {
     width: 100%;
     height: 100%;
 
-    box-shadow: rgba( 0, 0, 0, 0.15 ) 0px 4px 12px;
+    box-shadow: rgba( 0, 0, 0, 0.25 ) 0px 2px 3px;
 }
 
     .section-container {
@@ -147,6 +267,17 @@ section {
                 }
             }
 
+            .box-sect-icon:hover {
+                background-color: $acent-a;
+                border: 1px solid $acent-a;
+                transition: 1s;
+    
+                i {
+                    color: white;
+                    font-size: 25px;
+                }
+            }
+
     .section-card-container {
         @include flex( flex, center, center );
         flex-direction: column;
@@ -161,17 +292,31 @@ section {
             width: 686px;
             min-height: 722px;
             height: auto;
-            box-shadow: rgba( 0, 0, 0, 0.5 ) 0px 4px 12px;
+            box-shadow: rgba( 0, 0, 0, 0.25 ) 0px 2px 3px;
+        }
+
+        .figure {
+            @include flex( flex, center, center );
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
         }
     
         .card-img {
             @include flex( flex, center, center );
             width: 100%;
-            height: 50%;
+            height: 100%;
     
             background-image: url(../src/picture/tropiki_more_skaly_90638.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+            cursor: pointer;
+            transform: scale(1);
+            transition: 0.3s ease-in-out;
+        }
+
+        .card-img:hover {
+            transform: scale(1.2);
         }
     
         .card-txt {
@@ -211,7 +356,7 @@ aside {
         width: 100%;
         height: 470px;
 
-        box-shadow: rgba( 0, 0, 0, 0.15 ) 0px 4px 12px;
+        box-shadow: rgba( 0, 0, 0, 0.25 ) 0px 2px 3px;
 
         span {
             font-family: GraphikLCGRegular, Helvetica, sans-serif;
@@ -228,6 +373,10 @@ aside {
             height: 44px;
             border-radius: 22px;
             background-color: $acent-b;
+
+            background-image: url(../src/picture/mujer_business.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     
         p {
@@ -246,28 +395,34 @@ aside {
         min-height: 470px;
         height: auto;
 
-        box-shadow: rgba( 0, 0, 0, 0.15 ) 0px 4px 12px;
+        box-shadow: rgba( 0, 0, 0, 0.25 ) 0px 2px 3px;
+
+        background-color: antiquewhite;
 
         span {
             font-family: GraphikLCGRegular, Helvetica, sans-serif;
             font-weight: 800;
             margin: 10px;
-            text-align: center;
+            text-align: left;
             font-size: 36px;
             width: 90%;
         }
     
-        .box-pict {
+        .box-pict-b {
             display: flex;
             width: 44px;
             height: 44px;
             border-radius: 22px;
             background-color: $acent-b;
+
+            background-image: url(../src/picture/mujer_business.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     
         p {
             font-size: 24px;
-            text-align: center;
+            text-align: left;
             margin: 10px;
             width: 90%;
         }
@@ -320,7 +475,12 @@ footer {
     width: 100%;
     height: 565px;
 
-    box-shadow: rgba( 0, 0, 0, 0.15 ) 0px 4px 12px;
+    background-image: url(../src/picture/tropiki.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    box-shadow: rgba( 0, 0, 0, 0.25 ) 0px 2px 3px;
 
     span {
         font-family: GraphikLCGRegular, Helvetica, sans-serif;
@@ -366,8 +526,8 @@ form {
 }
 
 @media only screen and ( max-width: 1550px ) {
-    header {
-        span { font-size: 36px; }
+    .header {
+        span { font-size: 60px; }
         p { font-size: 24px; }
     }
         .box-container {
@@ -379,6 +539,26 @@ form {
             justify-content: center;
             width: 100%;
         }
+    
+    .slider {
+        width: 100%;
+        height: 598px;
+    }
+    
+    .slide {
+        img {
+            width: 100%;
+            height: 598px;
+        }
+    }
+
+    .navigation-manual {
+        width: 100%;
+    }
+    
+    .navigation-auto {
+        width: 100%;
+    }
 }
 
 @media only screen and ( max-width: 1400px ) {
@@ -430,6 +610,9 @@ form {
 }
 
 @media only screen and ( max-width: 500px ) {
+    .header {
+        span { font-size: 50px; }
+    }
     .box-container {
         width: 350px;
     }
@@ -453,7 +636,7 @@ form {
         height: 400px;
     }
 
-    form {    
+    form {
         input {
             width: 290px;
             padding: 0 15px;
